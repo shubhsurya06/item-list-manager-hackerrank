@@ -1,6 +1,4 @@
-# ItemListManagerHackerrank
-
-## 🧪 Practice Challenge: Item List Manager
+# Item List Manager Hackerrank
 
 ### 📝 Problem Statement
 
