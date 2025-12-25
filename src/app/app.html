@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-4">
   <div class="text-center">
     <h2>{{title()}}</h2>
   </div>
@@ -9,25 +9,55 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header text-center bg-dark mb-4" style="color: rgb(28, 234, 28); font-weight: bold;">
           Item List using NgRx
         </div>
         <div class="card-body">
 
-          <div>
-            <input type="text" class="form-control" [(ngModel)]="itemInput" name="itemInput" id="itemInput"
-              placeholder="Enter item">
-            <p><br /></p>
-            <button class="btn btn-success form-control" (click)="addItem()">Add Item</button>
+          <div class="mb-3">
+            <div class="input-group mb-4 input-group-sm">
+              <input type="text" class="form-control" [(ngModel)]="itemInput" name="itemInput" id="itemInput"
+                placeholder="Enter item">
+            </div>
+            <button class="btn form-control" [ngClass]="{'btn-success': !editId(), 'btn-warning': editId()}" (click)="addItem()">
+              {{editId() ? 'Edit Item' : 'Add Item'}}</button>
           </div>
-          <p></p>
-          <ul>
+
+          <!-- <ul>
             @for (item of itemList$ | async; track item.id) {
-            <li>
-              {{item.title}}
+            <li style="list-style: none;">
+              <input type="checkbox" [checked]="item.isCompleted" (change)="toggleTask(item)">&nbsp;&nbsp;
+              <span [ngClass]="{'text-decoration-line-through': item.isCompleted}">{{item.title}}</span>
             </li>
             }
-          </ul>
+          </ul> -->
+
+          @if ((itemList$ | async)?.length === 0) {
+          <p class="text-center">No items available. Please add some items.</p>
+          }
+          @for (item of itemList$ | async; track item.id) {
+          <div class="card mb-1">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <!-- Left side: checkbox + item title -->
+              <div class="d-flex align-items-center">
+                <input type="checkbox" [checked]="item.isCompleted" (change)="toggleTask(item.id)">&nbsp;&nbsp;
+                <span [ngClass]="{'text-decoration-line-through': item.isCompleted}">
+                  {{item.title}}
+                </span>
+              </div>
+
+              <!-- Right side: edit & delete buttons -->
+              <div>
+                <button class="btn btn-sm me-2"
+                  [ngClass]="{'btn-primary': editId() != item.id, 'btn-warning': editId() === item.id}"
+                  (click)="editId() === item.id ? resetInput() : editItem(item)" [disabled]="item.isCompleted">
+                  {{ editId() === item.id ? 'Clear' : 'Edit' }}
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="deleteItem(item.id)">Delete</button>
+              </div>
+            </div>
+          </div>
+          }
 
         </div>
       </div>

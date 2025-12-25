@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { addItem } from "./actions";
+import * as ItemActions from "./actions";
 import { IItem } from "../item.mode";
 
 export interface InitialItemState {
@@ -21,8 +21,23 @@ export const initialState: InitialItemState = {
 export const itemReducer = createReducer(
     initialState,
 
-    on(addItem, (state, { item }) => ({
+    on(ItemActions.addItem, (state, { item }) => ({
         ...state,
         itemList: findIndexAndReturnList([...state.itemList], item)
+    })),
+
+    on(ItemActions.toggleItem, (state, { id }) => ({
+        ...state,
+        itemList: state.itemList.map(ele => ele.id === id ? { ...ele, isCompleted: !ele.isCompleted } : ele)
+    })),
+
+    on(ItemActions.editItem, (state, {item}) => ({
+        ...state,
+        itemList: state.itemList.map(ele => ele.id === item.id ? {...ele, title: item.title} : ele)
+    })),
+
+    on(ItemActions.deleteItem,  (state, {id}) => ({
+        ...state,
+        itemList: state.itemList.filter(item => item.id != id)
     }))
 )
