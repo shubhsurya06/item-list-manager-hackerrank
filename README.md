@@ -1,59 +1,43 @@
 # ItemListManagerHackerrank
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+## 🧪 Practice Challenge: Item List Manager
 
-## Development server
+### 📝 Problem Statement
 
-To start a local development server, run:
+You are tasked with creating a simple application called **Item List Manager** that displays a list of items and allows users to add new items to the list.
 
-```bash
-ng serve
-```
+The items are displayed in an unordered list (`<ul>`), and users can add new items using an input field and a button.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Item List Manager Demo](https://s3.amazonaws.com/hr-assets/0/1719046513-25632d1299-hrc-idea-manager-list-animation.gif)
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### ✅ Detailed Requirements
 
-```bash
-ng generate component component-name
-```
+1. When the application loads, it should display an empty list.
+2. The input field should accept user text input.
+3. When the **Add Item** button is clicked:
+   - The text from the input field should be added to the list.
+   - The input field should be cleared.
+4. If the input field is empty and the button is clicked, nothing should be added to the list.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+### 🔁 Sample Interaction
 
-## Building
+#### Initial State
+- The list is empty.
+- The input field is empty.
 
-To build the project run:
+#### User Action 1
+- User types **"First Item"** in the input field.
+- User clicks **Add Item**.
+- The list displays:
+  - First Item
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+#### User Action 2
+- User types **"Second Item"** in the input field.
+- User clicks **Add Item**.
+- The list displays:
+  - First Item
+  - Second Item
