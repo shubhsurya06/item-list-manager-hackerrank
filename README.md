@@ -12,7 +12,7 @@ You are tasked with creating a simple application called **Item List Manager** t
 
 The items are displayed in an unordered list (`<ul>`), and users can add new items using an input field and a button.
 
-![Item List Manager Demo](https://s3.amazonaws.com/hr-assets/0/1719046513-25632d1299-hrc-idea-manager-list-animation.gif)
+<img width="416" height="250" alt="initialItem" src="https://github.com/user-attachments/assets/2d656912-d58f-4bcf-9efc-2606c36e1b5f" />
 
 ---
 
@@ -51,6 +51,8 @@ The items are displayed in an unordered list (`<ul>`), and users can add new ite
 
   * First Item
   * Second Item
+  * 
+<img width="420" height="350" alt="addedItems" src="https://github.com/user-attachments/assets/f96e12fa-6c74-4475-b71f-a9e72e2c6605" />
 
 ---
 
@@ -64,10 +66,16 @@ In addition to the core requirements, the application includes the following **a
 * Clicking the checkbox toggles the completion status of the item.
 * Completed items are visually distinguished (e.g., text strike-through).
 
+  <img width="417" height="349" alt="toggleItem" src="https://github.com/user-attachments/assets/5c2aea13-7b44-457a-bc21-9d19b767b4bb" />
+
+
 ### ✏️ Edit Item
 
 * Users can edit an existing item’s text.
 * The updated text is immediately reflected in the list.
+
+  <img width="419" height="351" alt="editItem" src="https://github.com/user-attachments/assets/8c2168f4-3b21-4116-b30d-af053a97d700" />
+
 
 ### 🗑️ Delete Item
 
