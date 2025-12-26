@@ -6,10 +6,11 @@ import { Observable } from 'rxjs';
 import { AsyncPipe, NgClass } from '@angular/common';
 import { IItem } from './item.mode';
 import * as ItemActions from './store/actions';
+import { BgColor } from './directives/bg-color';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, AsyncPipe, NgClass],
+  imports: [FormsModule, AsyncPipe, NgClass, BgColor],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
