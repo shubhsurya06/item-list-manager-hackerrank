@@ -1,8 +1,3 @@
-Here is a **clean, professional, Hackerrank-style updated `README.md`** with your **extra functionality clearly documented**, without changing the original intent of the problem.
-
-You can **copy-paste this directly** 👇
-
----
 
 # Item List Manager – Hackerrank
 
