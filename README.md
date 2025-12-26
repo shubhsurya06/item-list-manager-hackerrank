@@ -79,6 +79,42 @@ In addition to the core requirements, the application includes the following **a
 
 ---
 
+## 🎨 Visual Status Indicator (Custom Directive)
+
+To enhance usability and provide clear visual feedback, the application uses a **custom Angular attribute directive** to dynamically change the background color of each item based on its completion status.
+
+<img width="460" height="384" alt="image" src="https://github.com/user-attachments/assets/2eb35a15-5e54-4439-8cdd-8cafcb3b8091" />
+
+### 🧩 Directive Behavior
+
+* A custom directive is applied to each list item.
+* The directive listens to the item’s `isCompleted` state.
+* Whenever the checkbox is toggled, the background color updates automatically.
+
+### 🎯 Background Color Rules
+
+* **Completed Item**
+
+  * Background color:
+    `rgb(249, 154, 154)`
+    *(Light red – indicates completed task)*
+
+* **Incomplete Item**
+
+  * Background color:
+    `#93e793`
+    *(Light green – indicates active/incomplete task)*
+
+### 🛠️ Implementation Notes
+
+* The directive reacts to changes in the completion state without manual DOM manipulation.
+* It keeps the template clean and improves separation of concerns.
+* This approach enhances accessibility and visual clarity for users managing multiple items.
+
+This directive-driven styling ensures that item status is immediately recognizable at a glance, improving overall user experience.
+
+---
+
 ## 🛠️ Technical Notes
 
 * The application is built using **Angular (Standalone Components)**.
